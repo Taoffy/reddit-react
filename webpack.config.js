@@ -1,5 +1,6 @@
 const path = require('path');
-const HMTLWebpackPlugin = require('html-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV == 'development';
 const IS_PROD = NODE_ENV == 'production';
@@ -11,7 +12,7 @@ function setupDevtool() {
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
   mode: NODE_ENV ? NODE_ENV : 'development',
   entry: path.resolve(__dirname, 'src/index.jsx'),
@@ -21,12 +22,12 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.[jt]sx?$/,
+      test: /\.[tj]sx?$/,
       use: ['ts-loader']
     }]
   },
   plugins: [
-    new HMTLWebpackPlugin({template: path.resolve(__dirname, 'index.html')})
+    new HTMLWebpackPlugin({ template: path.resolve(__dirname, 'index.html') })
   ],
   devServer: {
     port: 3000,
