@@ -22,6 +22,6 @@ compiler.run((err) => {
     watch: [ 
       path.resolve(__dirname, '../dist/server'),
       path.resolve(__dirname, '../dist/client')
-  ]
+    ]
   })
 });
