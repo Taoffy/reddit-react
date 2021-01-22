@@ -1,8 +1,10 @@
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV == 'development';
 const IS_PROD = NODE_ENV == 'production';
+const GLOBAL_LESS_REGEXP = /\.global\.css$/;
 
 function setupDevtool() {
   if(IS_DEV) return 'eval';
@@ -37,8 +39,46 @@ module.exports = {
               }
             }
           },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  autoprefixer({
+                    verrideBrowserslist: ['> 0.0001%', 'not dead']
+                  }),
+                  require('cssnano')({ preset: 'default' }),
+                  require('postcss-flexbugs-fixes')
+                ],
+              },
+              sourceMap: IS_DEV   
+            }
+          },
           'less-loader',
-        ]
+        ],
+        exclude: GLOBAL_LESS_REGEXP,
+      },
+      {
+        test: GLOBAL_LESS_REGEXP,
+        use: [
+          'style-loader', 
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  autoprefixer({
+                    verrideBrowserslist: ['> 0.0001%', 'not dead']
+                  }),
+                  require('cssnano')({ preset: 'default' }),
+                  require('postcss-flexbugs-fixes')
+                ],
+              },
+              sourceMap: IS_DEV
+            }
+          }, 
+          'less-loader']
       }
     ]
   },
