@@ -3,7 +3,7 @@ const nodeExternals = require('webpack-node-externals');
 const autoprefixer = require('autoprefixer');
 
 const NODE_ENV = process.env.NODE_ENV;
-const GLOBAL_LESS_REGEXP = /\.global\.css$/;
+const GLOBAL_LESS_REGEXP = /\.global\.less$/;
 
 module.exports = {
   target: 'node',
