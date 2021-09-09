@@ -78,7 +78,8 @@ module.exports = {
               sourceMap: IS_DEV
             }
           }, 
-          'less-loader']
+          'less-loader'
+        ]
       }
     ]
   },

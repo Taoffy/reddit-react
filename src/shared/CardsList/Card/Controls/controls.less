@@ -1,0 +1,84 @@
+@import '../../../../variables.global.less';
+
+.controls {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  @media(min-width: 1024px) {
+    order: 3;
+    flex: 0 0;
+    margin: 0 0 0 24px;
+  }
+}
+
+.votesCounter {
+  @media(min-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+  }
+
+  & > button.up:hover > svg > path {
+    fill: @color-green;
+  }
+
+  & > button.down:hover > svg > path {
+    fill: @color-orange;
+  }
+}
+
+.votesCounter > * + * {
+  padding: 0 0 0 4px;
+
+  @media(min-width: 1024px) {
+    padding: 7px 0 0;
+  }
+}
+
+.votesValue {
+  color: @color-greyC4;
+}
+
+.down__svg {
+  transform: rotate(180deg);
+}
+
+.commentsButton {
+  display: flex;
+  align-items: normal;
+
+  @media(min-width: 1024px) {
+    display: none;
+  }
+}
+
+.commentsButton * {
+  color: @color-greyC4;
+}
+
+.commentsNumber {
+  padding: 0 0 0 6px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.actions {
+  display: flex;
+  flex-flow: row nowrap;
+
+  @media(min-width: 1024px) {
+    display: none;
+  }
+}
+
+.actions > * + * {
+  margin: 0 0 0 13px;
+}
+
+.shareButton, .saveButton {
+  width: 20px;
+  height: 20px;
+}
