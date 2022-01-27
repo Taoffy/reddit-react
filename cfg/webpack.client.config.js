@@ -4,6 +4,7 @@ const autoprefixer = require('autoprefixer');
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV == 'development';
 const IS_PROD = NODE_ENV == 'production';
+const MODULE_LESS_REGEXP = /\.module\.less$/;
 const GLOBAL_LESS_REGEXP = /\.global\.less$/;
 
 function setupDevtool() {
@@ -28,7 +29,7 @@ module.exports = {
       use: ['ts-loader']
       },
       {
-        test: /\.less$/,
+        test: MODULE_LESS_REGEXP,
         use: [
           'style-loader', {
             loader: 'css-loader',

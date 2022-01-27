@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./sortBlock.less";
+import styles from "./sortBlock.module.less";
 
 export function SortBlock() {
   return(

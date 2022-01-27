@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./threadTittle.less";
+import styles from "./threadTittle.module.less";
 
 export function ThreadTittle() {
   return(

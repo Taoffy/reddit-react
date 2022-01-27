@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './layout.less';
+import styles from './layout.module.less';
 
 interface ILayoutProps {
   children?: React.ReactNode;

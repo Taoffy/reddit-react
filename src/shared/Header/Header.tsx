@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./header.less";
+import styles from "./header.module.less";
 import { SearchBlock } from "./SearchBlock/SearchBlock";
 import { SortBlock } from "./SortBlock/SortBlock";
 import { ThreadTittle } from "./ThreadTittle/ThreadTittle";
