@@ -9,7 +9,7 @@ export function Menu() {
     return (
         <div className={styles.menu}>
             <Dropdown button={<MenuButton />}>
-                <ActionsDropdown />
+                <ActionsDropdown postId="1234" />
             </Dropdown>
         </div>
     );

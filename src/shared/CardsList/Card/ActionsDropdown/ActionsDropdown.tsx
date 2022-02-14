@@ -4,7 +4,12 @@ import styles from "./actionsDropdown.module.less";
 import GenericList from "../../../GenericList/GenericList";
 import { CommentsIcon, ShareIcon, BlockIcon, SaveIcon, WarningIcon } from "../../../Icons";
 import { generateId } from "../../../../utils/react/generateRandomIndex";
-import Text from "../../../Text/Text";
+import { Text } from "../../../Text/Text";
+import { EColors } from "../../../../utils/react/enums";
+
+interface IActionsDropdownProps {
+    postId: string;
+}
 
 const ACTIONS_LIST = [
     {
@@ -40,7 +45,7 @@ const ACTIONS_LIST = [
     },
 ].map(generateId);
 
-const ActionsDropdown = () => {
+const ActionsDropdown = ({ postId }: IActionsDropdownProps) => {
     return (
         <div className={styles.dropdown}>
             <ul className={styles.list}>
@@ -51,7 +56,7 @@ const ActionsDropdown = () => {
                     children="Закрыть"
                     size={14}
                     mobileSize={12}
-                    color={"grey66"}
+                    color={EColors.grey66}
                 />
             </button>
         </div>
