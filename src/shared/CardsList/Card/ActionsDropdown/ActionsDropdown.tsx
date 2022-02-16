@@ -2,10 +2,10 @@ import React from "react";
 
 import styles from "./actionsDropdown.module.less";
 import GenericList from "../../../GenericList/GenericList";
-import { CommentsIcon, ShareIcon, BlockIcon, SaveIcon, WarningIcon } from "../../../Icons";
+import Icon from "../../../Icons";
 import { generateId } from "../../../../utils/react/generateRandomIndex";
 import { Text } from "../../../Text/Text";
-import { EColors } from "../../../../utils/react/enums";
+import { EColors, EIcons } from "../../../../utils/react/enums";
 
 interface IActionsDropdownProps {
     postId: string;
@@ -14,32 +14,32 @@ interface IActionsDropdownProps {
 const ACTIONS_LIST = [
     {
         As: "li" as const,
-        img: <CommentsIcon />,
+        img: <Icon name={EIcons.comments} />,
         className: styles.item,
         text: 'Комментарии',
         
     },
     {
         As: "li" as const,
-        img: <ShareIcon />,
+        img: <Icon name={EIcons.share} />,
         className: styles.item,
         text: 'Поделиться',
     },
     {
         As: "li" as const,
-        img: <BlockIcon />,
+        img: <Icon name={EIcons.block} />,
         className: styles.item,
         text: 'Скрыть',
     },
     {
         As: "li" as const,
-        img: <SaveIcon />,
+        img: <Icon name={EIcons.save} />,
         className: styles.item,
         text: 'Сохранить',
     },
     {
         As: "li" as const,
-        img: <WarningIcon />,
+        img: <Icon name={EIcons.warning} size={16} />,
         className: styles.item,
         text: 'Пожаловаться',
     },
