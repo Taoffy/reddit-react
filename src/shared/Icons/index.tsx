@@ -7,6 +7,7 @@ import { SaveIcon } from "./SaveIcon";
 import { WarningIcon } from "./WarningIcon";
 import { VoteIcon } from "./VoteIcon";
 import { EIcons } from "../../utils/react/enums";
+import { AnonIcon } from "./AnonIcon";
 
 interface IIcon {
     name : EIcons;
@@ -45,6 +46,11 @@ const Icon = ({name, size = 14, direction = "up"}: IIcon) => {
         case EIcons.vote:
             return (
                 <VoteIcon size={size} direction={direction} />
+            );
+
+        case EIcons.anon:
+            return (
+                <AnonIcon size={size} />
             );
 
         default:

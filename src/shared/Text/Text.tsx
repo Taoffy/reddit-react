@@ -13,10 +13,11 @@ interface ITextProps {
     tabletSize?: TSizes;
     desktopSize?: TSizes;
     color?: EColors;
+    style?: { [N: string]: string }
     children: React.ReactNode;
 }
 
-export const Text = ({ As = 'span', size, mobileSize, tabletSize, desktopSize, color = EColors.black, children }: ITextProps) => {
+export const Text = ({ As = 'span', size, mobileSize, tabletSize, desktopSize, color = EColors.black, style, children }: ITextProps) => {
     const classes = classNames(
         styles[`s${size}`],
         { [styles[`m${mobileSize}`]]: mobileSize },
@@ -26,7 +27,7 @@ export const Text = ({ As = 'span', size, mobileSize, tabletSize, desktopSize, c
     );
 
     return (
-        <As className={classes}>
+        <As className={classes} style={style}>
             {children}
         </As>
     );

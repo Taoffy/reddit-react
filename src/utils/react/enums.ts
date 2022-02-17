@@ -17,4 +17,5 @@ export enum EIcons {
     save = "SaveIcon",
     warning = "WarningIcon",
     vote = "VoteIcon",
+    anon = "AnonIcon",
 }

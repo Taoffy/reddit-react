@@ -1,4 +1,5 @@
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 const NODE_ENV = process.env.NODE_ENV;
@@ -84,5 +85,6 @@ module.exports = {
       }
     ]
   },
-  devtool: setupDevtool()
+  devtool: setupDevtool(),
+  plugins: [ new DefinePlugin({ "process.env.CLIENT_ID": `'${process.env.CLIENT_ID}'` }) ],
 };
