@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Taoffy/reddit-react#readme",
   "dependencies": {
+    "axios": "^0.26.0",
     "classnames": "^2.3.1",
     "express": "^4.17.1",
     "nodemon": "^2.0.2",
