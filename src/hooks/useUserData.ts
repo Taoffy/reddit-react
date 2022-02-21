@@ -1,14 +1,11 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import tokenContext from "../shared/context/tokenContext";
+import { IUserContextData } from "../shared/context/userContext";
 
-interface IUserData {
-    name?: string;
-    iconImg?: string;
-}
 
 function useUserData() {
-    const [data, setData] = useState<IUserData>({});
+    const [data, setData] = useState<IUserContextData>({});
     
     const token = useContext(tokenContext);
 
@@ -19,7 +16,6 @@ function useUserData() {
           .then((res) => {
               const userData = res.data;
               setData({ name: userData.name, iconImg: userData.icon_img });
-              console.log(userData);
           })
           .catch(console.log);
     }, [token]);

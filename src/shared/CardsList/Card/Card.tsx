@@ -5,13 +5,35 @@ import { Menu } from './Menu/Menu';
 import { Preview } from './Preview/Preview';
 import { TextContent } from './TextContent/TextContent';
 
-export function Card() {
-    return(
+interface ICardProps {
+    author: string;
+    title: string;
+    created: number;
+    id: string;
+    commentsNum: number;
+    preview?: string;
+    score: number;
+}
+
+export function Card({ author, title, created, id, commentsNum, preview, score }: ICardProps) {
+
+    const regexMatch = preview?.match(/\.(gif|jpeg|jpg|png)$/ig);
+
+    return (
         <li className={styles.card}>
-            <TextContent />
-            <Preview />
+            <TextContent
+                author={author}
+                title={title}
+                created={created}
+            />
+            <Preview
+                preview={regexMatch ? preview : ''} 
+            />
             <Menu />
-            <Controls />
+            <Controls
+                score={score}
+                commentsNum={commentsNum}
+            />
         </li>
     );
 };
