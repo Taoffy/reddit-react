@@ -18,7 +18,7 @@ export function TextContent({ author, title, created }: ITextContentProps) {
             <div className={styles.metaData}>
                 <div className={styles.userLink}>
                     <img className={styles.avatar} src="https://cdn.dribbble.com/users/42578/avatars/mini/d0ac345ce3f79bf2c2e7e64527bbf342.jpg?1530900788" alt="avatar" />
-                    <a href={`https://www.reddit.com/user/${author}/`} className={styles.username}>{author}</a>
+                    <a href={`https://www.reddit.com/user/${author}/`} target={'_blank'} className={styles.username}>{author}</a>
                 </div>
                 <span className={styles.createdAt}>
                     <span className={styles.publishedLabel}>Posted </span>

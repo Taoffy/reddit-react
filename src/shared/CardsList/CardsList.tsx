@@ -6,7 +6,7 @@ import styles from './cardslist.module.less';
 
 export function CardsList() {
 
-    const posts = useContext(postsContext); 
+    const posts = useContext(postsContext);
 
     return (
         <ul className={styles.cardslist}>
